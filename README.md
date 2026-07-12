@@ -3,7 +3,7 @@
 > A fully responsive premium e-commerce marketplace frontend clone showcasing dynamic authentication, product listings, interactive cart drawers, search systems, and order dashboards.
 
 ## 🌐 Live Demo
-**GitHub Pages:** https://KalaiarasanE.github.io/E-commerce-website/
+**GitHub Pages:**[ https://KalaiarasanE.github.io/E-commerce-website/](https://ecommerceprof.netlify.app/)
 
 ---
 
