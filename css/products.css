@@ -1,0 +1,298 @@
+/* ==========================================================================
+   Product Listing Page Styles (E-Commerce Clone)
+   ========================================================================== */
+
+.products-page-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* ==========================================================================
+   Filter Sidebar
+   ========================================================================== */
+.filter-sidebar {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.filter-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid var(--border-color);
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+}
+
+.filter-sidebar-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.clear-filters-btn {
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.clear-filters-btn:hover {
+    color: var(--primary-hover);
+}
+
+.filter-section {
+    margin-bottom: 30px;
+}
+
+.filter-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.filter-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-count {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Price Range Slider */
+.price-range-inputs {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    align-items: center;
+}
+
+.price-range-inputs span {
+    color: var(--text-muted);
+}
+
+.price-input {
+    width: 100%;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 8px 10px;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* Rating filter items */
+.rating-filter-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.rating-filter-item:hover {
+    color: var(--primary);
+}
+
+/* ==========================================================================
+   Products Main Area
+   ========================================================================== */
+.products-main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Products Toolbar */
+.products-toolbar {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.products-count-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.products-toolbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.view-toggle {
+    display: flex;
+    gap: 8px;
+    border-right: 1px solid var(--border-color);
+    padding-right: 20px;
+}
+
+.view-toggle-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.view-toggle-btn:hover, .view-toggle-btn.active {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.sort-select-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.sort-select {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: border var(--transition-fast);
+}
+
+.sort-select:focus {
+    border-color: var(--primary);
+}
+
+/* ==========================================================================
+   Horizontal List View Override
+   ========================================================================== */
+.products-grid.list-view {
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.products-grid.list-view .product-card {
+    flex-direction: row;
+    height: 200px;
+}
+
+.products-grid.list-view .product-image-container {
+    width: 200px;
+    min-width: 200px;
+    padding-top: 0;
+    height: 100%;
+}
+
+.products-grid.list-view .product-info {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 24px;
+    flex-grow: 1;
+}
+
+.products-grid.list-view .product-title-rating {
+    flex: 1;
+    min-width: 250px;
+    margin-right: 20px;
+}
+
+.products-grid.list-view .product-title {
+    height: auto;
+    max-height: none;
+    -webkit-line-clamp: 1;
+    font-size: 1.15rem;
+}
+
+.products-grid.list-view .product-price-row {
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 0;
+}
+
+.products-grid.list-view .price-wrapper {
+    align-items: flex-end;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 50px;
+}
+
+.pagination-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    transition: all var(--transition-fast);
+}
+
+.pagination-btn:hover, .pagination-btn.active {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 992px) {
+    .products-page-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-sidebar {
+        display: none; /* Hide filter sidebar on tablet/mobile (needs modal filter trigger) */
+    }
+    
+    .view-toggle {
+        display: none; /* Hide view toggle on mobile */
+    }
+}

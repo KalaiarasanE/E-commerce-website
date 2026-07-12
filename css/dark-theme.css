@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Dark Theme Specific Styles (E-Commerce Clone)
+   ========================================================================== */
+
+/* 
+   Note: Core dark theme variables are initialized in style.css under the 
+   [data-theme="dark"] selector. This file provides additional high-end 
+   glow effects, shadows, and fine-tuned dark mode visual overrides.
+*/
+
+[data-theme="dark"] {
+    /* Enhanced dark mode shadows */
+    --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+    --header-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+    
+    /* Custom glow effects for glassmorphism in dark mode */
+    --primary-glow-effect: 0 0 20px rgba(129, 140, 248, 0.15);
+}
+
+/* Dark mode specific fine-tuning */
+[data-theme="dark"] .product-card:hover {
+    box-shadow: 0 10px 25px -5px rgba(129, 140, 248, 0.15), 0 8px 10px -6px rgba(129, 140, 248, 0.1);
+}
+
+[data-theme="dark"] .btn-primary:hover {
+    box-shadow: 0 0 25px rgba(129, 140, 248, 0.4);
+}
+
+[data-theme="dark"] .category-card:hover {
+    box-shadow: 0 10px 25px -5px rgba(129, 140, 248, 0.1);
+}
+
+[data-theme="dark"] .slide-overlay {
+    background: linear-gradient(90deg, 
+        rgba(11, 15, 25, 0.95) 0%, 
+        rgba(11, 15, 25, 0.7) 60%, 
+        rgba(11, 15, 25, 0.3) 100%);
+}
+
+[data-theme="dark"] input::placeholder, 
+[data-theme="dark"] textarea::placeholder {
+    color: var(--text-muted);
+}

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteStore | Product Details Page</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/dark-theme.css">
+    <style>
+        .details-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+        }
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .main-img-wrapper {
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            position: relative;
+            padding-top: 80%;
+            cursor: zoom-in;
+        }
+        .main-img-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .main-img-wrapper:hover img {
+            transform: scale(1.15);
+        }
+        .details-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .details-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--text-primary);
+        }
+        .details-price-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .details-old-price {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+        .detail-meta-item {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        .tabs-container {
+            margin-top: 60px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .tabs-headers {
+            display: flex;
+            gap: 30px;
+            margin-bottom: -1px;
+        }
+        .tab-btn {
+            padding: 12px 10px;
+            font-weight: 700;
+            color: var(--text-muted);
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+        }
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+        .tab-content {
+            padding: 30px 0;
+        }
+        .review-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+        .review-item:last-child {
+            border-bottom: none;
+        }
+        @media (max-width: 768px) {
+            .details-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .details-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div><i class="fas fa-shipping-fast text-primary"></i> Free worldwide shipping on orders over ₹200!</div>
+            <div class="top-bar-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Customer Support</a>
+                <a href="profile.html"><i class="far fa-user"></i> My Dashboard</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Header -->
+    <header class="main-header">
+        <div class="header-main">
+            <div class="container">
+                <button class="hamburger-menu"><i class="fas fa-bars"></i></button>
+                <a href="index.html" class="logo"><i class="fas fa-shopping-bag"></i> EliteStore</a>
+                <form class="search-container" autocomplete="off">
+                    <input type="text" placeholder="Search premium products..." class="search-bar">
+                    <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+                </form>
+                <div class="header-actions">
+                    <button class="action-btn theme-toggle-btn"><i class="fas fa-moon"></i></button>
+                    <a href="wishlist.html" class="action-btn">
+                        <i class="far fa-heart"></i>
+                        <span class="badge-count wishlist-count">0</span>
+                    </a>
+                    <a href="cart.html" class="action-btn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="badge-count cart-count">0</span>
+                    </a>
+                    <a href="profile.html" class="action-btn"><i class="far fa-user"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Shop All</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Categories <i class="fas fa-chevron-down" style="font-size:0.75rem;"></i></a>
+                        <!-- Mega Menu -->
+                        <div class="mega-menu">
+                            <div>
+                                <h4 class="mega-menu-title">Tech & Gadgets</h4>
+                                <ul class="mega-menu-links">
+                                    <li><a href="products.html?category=mobiles">Smartphones</a></li>
+                                    <li><a href="products.html?category=laptops">Laptops & PC</a></li>
+                                    <li><a href="products.html?category=electronics">Audio & Headphones</a></li>
+                                    <li><a href="products.html?category=electronics">Accessories</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="mega-menu-title">Home & Living</h4>
+                                <ul class="mega-menu-links">
+                                    <li><a href="products.html?category=furniture">Furniture</a></li>
+                                    <li><a href="products.html?category=home%20appliances">Home Appliances</a></li>
+                                    <li><a href="products.html?category=furniture">Decorations</a></li>
+                                    <li><a href="products.html?category=grocery">Groceries</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="mega-menu-title">Lifestyle</h4>
+                                <ul class="mega-menu-links">
+                                    <li><a href="products.html?category=fashion">Apparel & Fashion</a></li>
+                                    <li><a href="products.html?category=beauty">Cosmetics & Beauty</a></li>
+                                    <li><a href="products.html?category=sports">Sports & Outdoors</a></li>
+                                    <li><a href="products.html?category=toys">Toys & Games</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="mega-menu-title">Media & Leisure</h4>
+                                <ul class="mega-menu-links">
+                                    <li><a href="products.html?category=books">Books & Literature</a></li>
+                                    <li><a href="products.html?category=accessories">Bags & Luggage</a></li>
+                                    <li><a href="products.html?category=accessories">Watches</a></li>
+                                    <li><a href="products.html?category=sports">Fitness Gear</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="products.html?category=electronics" class="nav-link">Electronics</a></li>
+                    <li><a href="products.html?category=fashion" class="nav-link">Fashion</a></li>
+                    <li><a href="products.html?category=furniture" class="nav-link">Furniture</a></li>
+                    <li><a href="about.html" class="nav-link">Our Story</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-overlay"></div>
+    <div class="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo" style="font-size:1.5rem;"><i class="fas fa-shopping-bag"></i> EliteStore</a>
+            <button class="mobile-nav-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i> Home</a>
+            <a href="products.html" class="mobile-nav-link"><i class="fas fa-shopping-bag"></i> Shop All</a>
+            <a href="categories.html" class="mobile-nav-link"><i class="fas fa-th-large"></i> Categories</a>
+            <a href="wishlist.html" class="mobile-nav-link"><i class="far fa-heart"></i> Wishlist</a>
+            <a href="cart.html" class="mobile-nav-link"><i class="fas fa-shopping-cart"></i> Cart</a>
+            <a href="profile.html" class="mobile-nav-link"><i class="far fa-user"></i> My Dashboard</a>
+            <a href="about.html" class="mobile-nav-link"><i class="fas fa-info-circle"></i> About Us</a>
+            <a href="contact.html" class="mobile-nav-link"><i class="fas fa-headset"></i> Support</a>
+        </div>
+    </div>
+
+    <!-- MAIN PRODUCT DETAILS AREA -->
+    <main class="container section-padding">
+        <div class="details-layout">
+            <!-- Left: Image Gallery -->
+            <div class="gallery-container">
+                <div class="main-img-wrapper">
+                    <img id="mainProductImage" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80" alt="Main Product Image">
+                </div>
+            </div>
+
+            <!-- Right: Product Info -->
+            <div class="details-info">
+                <span class="product-category" id="productCategory" style="font-weight:700; color:var(--primary); font-size:0.85rem; text-transform:uppercase;">Electronics</span>
+                <h1 class="details-title" id="productTitle">Product Title Loading...</h1>
+                
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <span id="ratingStars" style="color:var(--warning); display:flex; gap:4px;"></span>
+                    <span id="reviewCount" style="color:var(--text-secondary); font-size:0.9rem;">(0 Customer Reviews)</span>
+                </div>
+
+                <div class="details-price-row">
+                    <span id="productPrice" style="color:var(--text-primary);">₹0.00</span>
+                    <span id="productOldPrice" class="details-old-price">₹0.00</span>
+                </div>
+
+                <p id="productDescription" style="color:var(--text-secondary); line-height:1.7;">
+                    Description details loading...
+                </p>
+
+                <div style="border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); padding:20px 0; display:flex; flex-direction:column; gap:16px;">
+                    <div class="detail-meta-item"><strong>Brand:</strong> <span id="productBrand">Loading...</span></div>
+                    
+                    <!-- Color variant option -->
+                    <div>
+                        <strong style="display:block; margin-bottom:8px; font-size:0.9rem;">Available Colors:</strong>
+                        <div id="colorOptions" style="display:flex; align-items:center;"></div>
+                    </div>
+
+                    <!-- Size variant option -->
+                    <div>
+                        <strong style="display:block; margin-bottom:8px; font-size:0.9rem;">Select Size / Variant:</strong>
+                        <div id="sizeOptions" style="display:flex; flex-wrap:wrap;"></div>
+                    </div>
+                </div>
+
+                <!-- Quantity & Add-to-cart row -->
+                <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap; margin-top:10px;">
+                    <div class="quantity-control" style="border-color:var(--border-hover);">
+                        <button class="qty-btn" id="detailsQtyDec"><i class="fas fa-minus"></i></button>
+                        <span class="qty-value" id="detailsQtyValue" style="border-color:var(--border-hover);">1</span>
+                        <button class="qty-btn" id="detailsQtyInc"><i class="fas fa-plus"></i></button>
+                    </div>
+
+                    <button class="btn btn-primary" id="addToCartBtn" style="flex:1; min-width:200px;">
+                        <i class="fas fa-shopping-cart"></i> Add To Cart
+                    </button>
+                    <button class="btn btn-secondary" id="buyNowBtn" style="flex:1; min-width:200px;">
+                        Buy Now
+                    </button>
+                </div>
+
+                <div style="display:flex; gap:20px; font-size:0.9rem; margin-top:10px;">
+                    <button class="btn-text" id="addWishlistBtn" style="color:var(--text-secondary); cursor:pointer;"><i class="far fa-heart"></i> Add to Wishlist</button>
+                    <button class="btn-text" id="shareProductBtn" style="color:var(--text-secondary); cursor:pointer;"><i class="fas fa-share-alt"></i> Share Product</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Specification tabs / Reviews -->
+        <div class="tabs-container">
+            <div class="tabs-headers">
+                <span class="tab-btn active" onclick="switchDetailsTab('specsTab', this)">Specifications</span>
+                <span class="tab-btn" onclick="switchDetailsTab('reviewsTab', this)">Customer Reviews</span>
+            </div>
+        </div>
+
+        <!-- Spec Tab content -->
+        <div class="tab-content" id="specsTab">
+            <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+                <tbody id="specsTableBody"></tbody>
+            </table>
+        </div>
+
+        <!-- Review Tab content -->
+        <div class="tab-content" id="reviewsTab" style="display:none;">
+            <div style="display:grid; grid-template-columns: 1.2fr 1fr; gap:50px;">
+                <div>
+                    <h3 style="font-weight:700; margin-bottom:20px;">Customer Reviews</h3>
+                    <div id="reviewsList" style="display:flex; flex-direction:column; gap:16px;">
+                        <!-- Initial reviews loaded dynamically or mock static -->
+                        <div class="review-item">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                                <strong style="font-weight:700;">Sarah Connor</strong>
+                                <span style="font-size:0.8rem; color:var(--text-muted);">March 15, 2026</span>
+                            </div>
+                            <div style="color:var(--warning); font-size:0.85rem; margin-bottom:8px;">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p style="color:var(--text-secondary); font-size:0.95rem;">
+                                Incredible product quality! Exceeded my expectations, the build finish feels very premium and shipping was extremely fast. Recommended!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="font-weight:700; margin-bottom:20px;">Write a Review</h3>
+                    <form id="reviewForm" style="display:flex; flex-direction:column; gap:16px;">
+                        <div class="form-group">
+                            <label class="form-label" for="reviewAuthor">Your Name</label>
+                            <input type="text" class="form-input" id="reviewAuthor" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="reviewRating">Rating Stars</label>
+                            <select class="form-input" id="reviewRating" style="cursor:pointer;" required>
+                                <option value="5">5 Stars (Excellent)</option>
+                                <option value="4">4 Stars (Good)</option>
+                                <option value="3">3 Stars (Average)</option>
+                                <option value="2">2 Stars (Poor)</option>
+                                <option value="1">1 Star (Very Bad)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="reviewText">Review Comments</label>
+                            <textarea class="form-input" id="reviewText" rows="4" style="resize:vertical;" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Review</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related products section -->
+        <section style="margin-top:80px; border-top:1px solid var(--border-color); padding-top:60px;">
+            <h3 style="font-size:1.8rem; font-weight:800; margin-bottom:40px; text-align:center;">Frequently Bought Together</h3>
+            <div class="grid products-grid" id="relatedProductsGrid"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom:20px; font-size:1.6rem;"><i class="fas fa-shopping-bag"></i> EliteStore</a>
+                    <p>Providing the most premium products across gadgets, styling fashion, home upgrades, and essential accessories since 2026.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Product Catalog</h4>
+                    <ul class="footer-links">
+                        <li><a href="products.html?category=electronics">Electronics</a></li>
+                        <li><a href="products.html?category=fashion">Fashion & Apparel</a></li>
+                        <li><a href="products.html?category=furniture">Home Furniture</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Help & Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Track Your Order</a></li>
+                        <li><a href="contact.html">Returns & Refunds</a></li>
+                        <li><a href="contact.html">Live Chat Help</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Join Our Newsletter</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email" class="newsletter-input" required>
+                        <button type="submit" class="newsletter-btn">Join</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EliteStore Clone. Built by **Kalaiarasan E**. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Helper for Details Tab Switcher -->
+    <script>
+        function switchDetailsTab(tabId, btnElement) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btnElement.classList.add('active');
+            
+            document.getElementById('specsTab').style.display = 'none';
+            document.getElementById('reviewsTab').style.display = 'none';
+            
+            document.getElementById(tabId).style.display = 'block';
+        }
+    </script>
+
+    <!-- Scripts -->
+    <script src="js/notifications.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/product.js"></script>
+</body>
+</html>

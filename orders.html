@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteStore | Order Management</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/dark-theme.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div><i class="fas fa-shipping-fast text-primary"></i> Free shipping on orders over ₹200!</div>
+            <div class="top-bar-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Customer Support</a>
+                <a href="profile.html"><i class="far fa-user"></i> My Dashboard</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Header -->
+    <header class="main-header">
+        <div class="header-main">
+            <div class="container">
+                <button class="hamburger-menu"><i class="fas fa-bars"></i></button>
+                <a href="index.html" class="logo"><i class="fas fa-shopping-bag"></i> EliteStore</a>
+                <form class="search-container" autocomplete="off">
+                    <input type="text" placeholder="Search premium products..." class="search-bar">
+                    <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+                </form>
+                <div class="header-actions">
+                    <button class="action-btn theme-toggle-btn"><i class="fas fa-moon"></i></button>
+                    <a href="wishlist.html" class="action-btn">
+                        <i class="far fa-heart"></i>
+                        <span class="badge-count wishlist-count">0</span>
+                    </a>
+                    <a href="cart.html" class="action-btn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="badge-count cart-count">0</span>
+                    </a>
+                    <a href="profile.html" class="action-btn"><i class="far fa-user"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN BODY -->
+    <main class="container section-padding">
+        <!-- Target for specific Order Confirmation View (renders if url has ?id=ORD-XXXXXX) -->
+        <div id="orderConfirmationDetails"></div>
+
+        <!-- Target for general Order History List (renders if no url param) -->
+        <div id="generalOrderHistoryArea" class="profile-layout" style="margin-top:20px;">
+            <!-- Left Dashboard menu navigation -->
+            <aside class="profile-sidebar">
+                <div class="profile-user-info">
+                    <div class="profile-avatar-container">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="User Avatar" class="profile-avatar">
+                    </div>
+                    <h3 class="profile-username">Kalaiarasan E</h3>
+                    <span class="profile-email">kalai@example.com</span>
+                </div>
+                <nav class="profile-nav-menu">
+                    <a href="profile.html" class="profile-nav-item"><i class="fas fa-user-circle"></i> Profile Details</a>
+                    <a href="orders.html" class="profile-nav-item active"><i class="fas fa-box"></i> Order History</a>
+                    <a href="wishlist.html" class="profile-nav-item"><i class="fas fa-heart"></i> Saved Wishlist</a>
+                    <a href="profile.html" class="profile-nav-item"><i class="fas fa-map-marker-alt"></i> Shipping Addresses</a>
+                    <a href="contact.html" class="profile-nav-item"><i class="fas fa-headset"></i> Get Help Desk</a>
+                </nav>
+            </aside>
+
+            <!-- Right Orders History main list -->
+            <section class="profile-content-panel">
+                <div class="profile-panel-header">
+                    <h2 class="profile-panel-title">My Order History</h2>
+                </div>
+                <!-- Dynamic listing container target -->
+                <div id="ordersListContainer"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container text-center" style="padding-bottom:30px;">
+            <p>&copy; 2026 EliteStore Clone. Built by **Kalaiarasan E**. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Check if there is an ID param to hide general list structure
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const orderId = urlParams.get('id');
+            const generalArea = document.getElementById('generalOrderHistoryArea');
+            if (orderId && generalArea) {
+                generalArea.style.display = 'none';
+            }
+        });
+    </script>
+
+    <!-- Scripts -->
+    <script src="js/notifications.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/orders.js"></script>
+</body>
+</html>

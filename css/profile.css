@@ -1,0 +1,357 @@
+/* ==========================================================================
+   User Profile & Dashboard Page Styles (E-Commerce Clone)
+   ========================================================================== */
+
+.profile-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* ==========================================================================
+   Profile Sidebar
+   ========================================================================== */
+.profile-sidebar {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 30px 20px;
+    height: fit-content;
+}
+
+.profile-user-info {
+    text-align: center;
+    border-bottom: 1.5px solid var(--border-color);
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+}
+
+.profile-avatar-container {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 16px auto;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    border: 3px solid var(--primary);
+}
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-avatar-upload {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 0.7rem;
+    padding: 3px 0;
+    cursor: pointer;
+}
+
+.profile-username {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+.profile-email {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+.profile-nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.profile-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 20px;
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all var(--transition-fast);
+}
+
+.profile-nav-item:hover, .profile-nav-item.active {
+    background-color: var(--primary-glow);
+    color: var(--primary);
+}
+
+.profile-nav-item i {
+    font-size: 1.15rem;
+    width: 20px;
+}
+
+.profile-nav-item.logout-btn:hover {
+    background-color: rgba(244, 63, 94, 0.1);
+    color: var(--accent);
+}
+
+/* ==========================================================================
+   Profile Dashboard Contents
+   ========================================================================== */
+.profile-content-panel {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    min-height: 500px;
+}
+
+.profile-panel-header {
+    border-bottom: 1.5px solid var(--border-color);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-panel-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+/* Dashboard Overview Cards */
+.profile-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.profile-stat-card {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform var(--transition-fast);
+}
+
+.profile-stat-card:hover {
+    transform: translateY(-4px);
+}
+
+.profile-stat-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-glow);
+    color: var(--primary);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.profile-stat-num {
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.profile-stat-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* Addresses Grid */
+.addresses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.address-card {
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    position: relative;
+    transition: all var(--transition-fast);
+}
+
+.address-card.default {
+    border-color: var(--primary);
+    background-color: var(--primary-glow);
+}
+
+.address-tag {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background-color: var(--bg-tertiary);
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+}
+
+.address-card.default .address-tag {
+    background-color: var(--primary);
+    color: white;
+}
+
+.address-name {
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.address-details {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.address-actions {
+    display: flex;
+    gap: 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.address-edit-btn {
+    color: var(--primary);
+}
+
+.address-delete-btn {
+    color: var(--accent);
+}
+
+/* Orders List */
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-card {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.order-card-header {
+    background-color: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 0.9rem;
+}
+
+.order-meta-info {
+    display: flex;
+    gap: 30px;
+}
+
+.order-meta-item span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.order-meta-item p {
+    font-weight: 700;
+}
+
+.order-card-body {
+    padding: 24px;
+}
+
+.order-item-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 16px;
+}
+
+.order-item-row:last-child {
+    margin-bottom: 0;
+}
+
+.order-item-img {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+}
+
+.order-item-details {
+    flex-grow: 1;
+}
+
+.order-item-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.order-item-qty {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+.order-status-badge {
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.status-delivered {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--secondary);
+}
+
+.status-shipped {
+    background-color: rgba(14, 165, 233, 0.1);
+    color: var(--info);
+}
+
+.status-processing {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--warning);
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 992px) {
+    .profile-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-content-panel {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .order-card-header {
+        flex-direction: column;
+    }
+}

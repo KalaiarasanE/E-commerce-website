@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteStore | Product Catalog Shop</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style Sheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/dark-theme.css">
+</head>
+<body>
+
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div><i class="fas fa-shipping-fast text-primary"></i> Free worldwide shipping on orders over ₹200!</div>
+            <div class="top-bar-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Customer Support</a>
+                <a href="profile.html"><i class="far fa-user"></i> My Dashboard</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Header -->
+    <header class="main-header">
+        <div class="header-main">
+            <div class="container">
+                <button class="hamburger-menu"><i class="fas fa-bars"></i></button>
+                <a href="index.html" class="logo"><i class="fas fa-shopping-bag"></i> EliteStore</a>
+                <form class="search-container" autocomplete="off">
+                    <input type="text" placeholder="Search premium products..." class="search-bar">
+                    <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+                </form>
+                <div class="header-actions">
+                    <button class="action-btn theme-toggle-btn"><i class="fas fa-moon"></i></button>
+                    <a href="wishlist.html" class="action-btn">
+                        <i class="far fa-heart"></i>
+                        <span class="badge-count wishlist-count">0</span>
+                    </a>
+                    <a href="cart.html" class="action-btn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="badge-count cart-count">0</span>
+                    </a>
+                    <a href="profile.html" class="action-btn"><i class="far fa-user"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link" style="color: var(--primary);">Shop All</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Categories <i class="fas fa-chevron-down" style="font-size:0.75rem;"></i></a>
+                        <!-- Mega Menu -->
+                        <div class="mega-menu">
+                            <div>
+                                <h4 class="mega-menu-title">Tech & Gadgets</h4>
+                                <ul class="mega-menu-links">
+                                    <li><a href="products.html?category=mobiles">Smartphones</a></li>
+                                    <li><a href="products.html?category=laptops">Laptops & PC</a></li>
+                                    <li><a href="products.html?category=electronics">Audio & Headphones</a></li>
+                                    <li><a href="products.html?category=electronics">Accessories</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="mega-menu-title">Home & Living</h4>
+                                <ul class="mega-menu-links">
+                                    <li><a href="products.html?category=furniture">Furniture</a></li>
+                                    <li><a href="products.html?category=home%20appliances">Home Appliances</a></li>
+                                    <li><a href="products.html?category=furniture">Decorations</a></li>
+                                    <li><a href="products.html?category=grocery">Groceries</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="mega-menu-title">Lifestyle</h4>
+                                <ul class="mega-menu-links">
+                                    <li><a href="products.html?category=fashion">Apparel & Fashion</a></li>
+                                    <li><a href="products.html?category=beauty">Cosmetics & Beauty</a></li>
+                                    <li><a href="products.html?category=sports">Sports & Outdoors</a></li>
+                                    <li><a href="products.html?category=toys">Toys & Games</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="mega-menu-title">Media & Leisure</h4>
+                                <ul class="mega-menu-links">
+                                    <li><a href="products.html?category=books">Books & Literature</a></li>
+                                    <li><a href="products.html?category=accessories">Bags & Luggage</a></li>
+                                    <li><a href="products.html?category=accessories">Watches</a></li>
+                                    <li><a href="products.html?category=sports">Fitness Gear</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="products.html?category=electronics" class="nav-link">Electronics</a></li>
+                    <li><a href="products.html?category=fashion" class="nav-link">Fashion</a></li>
+                    <li><a href="products.html?category=furniture" class="nav-link">Furniture</a></li>
+                    <li><a href="about.html" class="nav-link">Our Story</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-overlay"></div>
+    <div class="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo" style="font-size:1.5rem;"><i class="fas fa-shopping-bag"></i> EliteStore</a>
+            <button class="mobile-nav-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html" class="mobile-nav-link"><i class="fas fa-home"></i> Home</a>
+            <a href="products.html" class="mobile-nav-link" style="color:var(--primary);"><i class="fas fa-shopping-bag"></i> Shop All</a>
+            <a href="categories.html" class="mobile-nav-link"><i class="fas fa-th-large"></i> Categories</a>
+            <a href="wishlist.html" class="mobile-nav-link"><i class="far fa-heart"></i> Wishlist</a>
+            <a href="cart.html" class="mobile-nav-link"><i class="fas fa-shopping-cart"></i> Cart</a>
+            <a href="profile.html" class="mobile-nav-link"><i class="far fa-user"></i> My Dashboard</a>
+            <a href="about.html" class="mobile-nav-link"><i class="fas fa-info-circle"></i> About Us</a>
+            <a href="contact.html" class="mobile-nav-link"><i class="fas fa-headset"></i> Support</a>
+        </div>
+    </div>
+
+    <!-- MAIN PRODUCT LISTING PAGE -->
+    <main class="container section-padding">
+        <div class="products-page-layout">
+            <!-- Sidebar Filters -->
+            <aside class="filter-sidebar">
+                <div class="filter-sidebar-header">
+                    <h3 class="filter-sidebar-title"><i class="fas fa-filter"></i> Filters</h3>
+                    <button class="clear-filters-btn" id="clearFiltersBtn">Clear All</button>
+                </div>
+
+                <!-- Category Filter Section -->
+                <div class="filter-section">
+                    <h4 class="filter-title">Categories</h4>
+                    <div class="filter-list">
+                        <label class="form-checkbox">
+                            <input type="checkbox" class="category-filter-checkbox" data-category="electronics"> Electronics
+                        </label>
+                        <label class="form-checkbox">
+                            <input type="checkbox" class="category-filter-checkbox" data-category="fashion"> Fashion
+                        </label>
+                        <label class="form-checkbox">
+                            <input type="checkbox" class="category-filter-checkbox" data-category="mobiles"> Mobiles
+                        </label>
+                        <label class="form-checkbox">
+                            <input type="checkbox" class="category-filter-checkbox" data-category="laptops"> Laptops
+                        </label>
+                        <label class="form-checkbox">
+                            <input type="checkbox" class="category-filter-checkbox" data-category="home appliances"> Home Appliances
+                        </label>
+                        <label class="form-checkbox">
+                            <input type="checkbox" class="category-filter-checkbox" data-category="grocery"> Grocery
+                        </label>
+                        <label class="form-checkbox">
+                            <input type="checkbox" class="category-filter-checkbox" data-category="furniture"> Furniture
+                        </label>
+                        <label class="form-checkbox">
+                            <input type="checkbox" class="category-filter-checkbox" data-category="beauty"> Beauty
+                        </label>
+                        <label class="form-checkbox">
+                            <input type="checkbox" class="category-filter-checkbox" data-category="sports"> Sports
+                        </label>
+                        <label class="form-checkbox">
+                            <input type="checkbox" class="category-filter-checkbox" data-category="books"> Books
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Brand Filter Section -->
+                <div class="filter-section">
+                    <h4 class="filter-title">Brands</h4>
+                    <div class="filter-list">
+                        <label class="form-checkbox">
+                            <input type="checkbox" class="brand-filter-checkbox" data-brand="sony"> Sony
+                        </label>
+                        <label class="form-checkbox">
+                            <input type="checkbox" class="brand-filter-checkbox" data-brand="nike"> Nike
+                        </label>
+                        <label class="form-checkbox">
+                            <input type="checkbox" class="brand-filter-checkbox" data-brand="samsung"> Samsung
+                        </label>
+                        <label class="form-checkbox">
+                            <input type="checkbox" class="brand-filter-checkbox" data-brand="philips"> Philips
+                        </label>
+                        <label class="form-checkbox">
+                            <input type="checkbox" class="brand-filter-checkbox" data-brand="wilson"> Wilson
+                        </label>
+                        <label class="form-checkbox">
+                            <input type="checkbox" class="brand-filter-checkbox" data-brand="lego"> Lego
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Price Filter Section -->
+                <div class="filter-section">
+                    <h4 class="filter-title">Price Range</h4>
+                    <div class="price-range-inputs">
+                        <input type="number" placeholder="Min" id="minPrice" class="price-input">
+                        <span>-</span>
+                        <input type="number" placeholder="Max" id="maxPrice" class="price-input">
+                    </div>
+                    <button class="btn btn-outline btn-sm" id="applyPriceFilter" style="width: 100%; margin-top: 14px;">Apply Price</button>
+                </div>
+
+                <!-- Ratings Filter Section -->
+                <div class="filter-section">
+                    <h4 class="filter-title">Customer Review</h4>
+                    <div class="filter-list">
+                        <div class="rating-filter-item" data-rating="4">
+                            <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span> & Up
+                        </div>
+                        <div class="rating-filter-item" data-rating="3">
+                            <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span> & Up
+                        </div>
+                        <div class="rating-filter-item" data-rating="2">
+                            <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span> & Up
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Listing Grid Area -->
+            <section class="products-main">
+                <!-- Toolbar sorting & view triggers -->
+                <div class="products-toolbar">
+                    <span class="products-count-text">Showing 0 of 0 Products</span>
+                    <div class="products-toolbar-actions">
+                        <!-- Toggle views buttons -->
+                        <div class="view-toggle">
+                            <button class="view-toggle-btn active" id="gridViewBtn"><i class="fas fa-th"></i></button>
+                            <button class="view-toggle-btn" id="listViewBtn"><i class="fas fa-list"></i></button>
+                        </div>
+                        <div class="sort-select-wrapper">
+                            <label class="sort-label">Sort By:</label>
+                            <select class="sort-select">
+                                <option value="default">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Customer Rating</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dynamic product grid target -->
+                <div class="grid products-grid" id="productsGrid"></div>
+
+                <!-- Pagination navigation container -->
+                <div class="pagination" id="pagination"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom:20px; font-size:1.6rem;"><i class="fas fa-shopping-bag"></i> EliteStore</a>
+                    <p>Providing the most premium products across gadgets, styling fashion, home upgrades, and essential accessories since 2026.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Product Catalog</h4>
+                    <ul class="footer-links">
+                        <li><a href="products.html?category=electronics">Electronics</a></li>
+                        <li><a href="products.html?category=fashion">Fashion & Apparel</a></li>
+                        <li><a href="products.html?category=mobiles">Mobiles & Phones</a></li>
+                        <li><a href="products.html?category=laptops">Laptops & Computers</a></li>
+                        <li><a href="products.html?category=furniture">Home Furniture</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Help & Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Track Your Order</a></li>
+                        <li><a href="contact.html">Returns & Refunds</a></li>
+                        <li><a href="contact.html">Shipping Guidelines</a></li>
+                        <li><a href="contact.html">FAQ Help Desk</a></li>
+                        <li><a href="contact.html">Live Chat Help</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Join Our Newsletter</h4>
+                    <p>Subscribe to receive sales alerts, promotional voucher codes, and premium catalog launches.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" class="newsletter-input" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EliteStore Clone. Built by **Kalaiarasan E**. All rights reserved.</p>
+                <div class="payment-methods-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-apple-pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
+
+    <!-- Javascripts -->
+    <script src="js/notifications.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

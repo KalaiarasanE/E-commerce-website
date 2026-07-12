@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteStore | Our Story & Brand Vision</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/dark-theme.css">
+    <style>
+        .about-hero {
+            height: 380px;
+            background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        .about-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(11, 15, 25, 0.7);
+            z-index: 1;
+        }
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            padding: 24px;
+        }
+        .about-content-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        @media (max-width: 768px) {
+            .about-content-row {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div><i class="fas fa-shipping-fast text-primary"></i> Free shipping on orders over ₹200!</div>
+            <div class="top-bar-links">
+                <a href="about.html" style="color:var(--primary);">About Us</a>
+                <a href="contact.html">Customer Support</a>
+                <a href="profile.html"><i class="far fa-user"></i> My Dashboard</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-main">
+            <div class="container">
+                <button class="hamburger-menu"><i class="fas fa-bars"></i></button>
+                <a href="index.html" class="logo"><i class="fas fa-shopping-bag"></i> EliteStore</a>
+                <form class="search-container" autocomplete="off">
+                    <input type="text" placeholder="Search premium products..." class="search-bar">
+                    <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+                </form>
+                <div class="header-actions">
+                    <button class="action-btn theme-toggle-btn"><i class="fas fa-moon"></i></button>
+                    <a href="cart.html" class="action-btn"><i class="fas fa-shopping-bag"></i></a>
+                    <a href="profile.html" class="action-btn"><i class="far fa-user"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN BODY -->
+    <main class="container section-padding">
+        <!-- Hero section banner -->
+        <div class="about-hero animate-fade-in-up">
+            <div class="about-hero-overlay"></div>
+            <div class="about-hero-content">
+                <h1 style="font-size: 3rem; font-weight: 800; line-height: 1.1;">Our Design Philosophy</h1>
+                <p style="color:#cbd5e1; margin-top:12px; font-size:1.15rem; max-width:600px;">Crafting gorgeous online marketplaces focusing on clean code, responsiveness, and premium visual interfaces.</p>
+            </div>
+        </div>
+
+        <!-- Vision and mission description -->
+        <div class="about-content-row">
+            <div>
+                <h2 style="font-size:2rem; font-weight:800; color:var(--text-primary); margin-bottom:16px;">Redefining E-Commerce Aesthetics</h2>
+                <p style="color:var(--text-secondary); line-height:1.8; margin-bottom:16px;">
+                    EliteStore was created as a state-of-the-art visual portfolio project demonstrating advanced vanilla front-end development capabilities. We believe that a user interface shouldn't just be functional — it should be an engaging experience that is responsive and alive.
+                </p>
+                <p style="color:var(--text-secondary); line-height:1.8;">
+                    By using semantic HTML5 structures, modular CSS styling variables for quick dark theme toggles, and vanilla ES6 JavaScript DOM manipulation to manage complex shopping cart and checkout states, we showcase what is possible in modern browsers without the overhead of heavy frameworks.
+                </p>
+            </div>
+            <div style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding:40px; display:flex; flex-direction:column; gap:24px;">
+                <div>
+                    <h3 style="font-weight:800; color:var(--primary); font-size:1.25rem;"><i class="fas fa-bullseye"></i> Our Mission</h3>
+                    <p style="color:var(--text-secondary); margin-top:8px; font-size:0.95rem;">To create visual marketplace clones that recreate complete online retail systems from product catalogs to secure verification simulations.</p>
+                </div>
+                <div>
+                    <h3 style="font-weight:800; color:var(--primary); font-size:1.25rem;"><i class="fas fa-laptop-code"></i> Developer Profile</h3>
+                    <p style="color:var(--text-secondary); margin-top:8px; font-size:0.95rem;">Designed and coded by **Kalaiarasan E**, a passionate frontend web engineer dedicated to building sleek, responsive, and pixel-perfect applications.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center" style="background-color:var(--bg-secondary); border:1px solid var(--border-color); border-radius:var(--radius-lg); padding:60px 24px;">
+            <h2 style="font-size:2.2rem; font-weight:800; margin-bottom:12px;">Ready to Explore?</h2>
+            <p style="color:var(--text-secondary); max-width:500px; margin:0 auto 30px auto;">Take a look at our dynamically loaded premium gadgets, clothes, furniture, and other category products.</p>
+            <a href="products.html" class="btn btn-primary btn-lg">Shop All Catalog</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container text-center" style="padding-bottom:30px;">
+            <p>&copy; 2026 EliteStore Clone. Built by **Kalaiarasan E**. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/notifications.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+/* ==========================================================================
+   Checkout Page Styles (E-Commerce Clone)
+   ========================================================================== */
+
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* ==========================================================================
+   Checkout Forms (Steps)
+   ========================================================================== */
+.checkout-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.checkout-step-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1.5px solid var(--border-color);
+    padding-bottom: 16px;
+}
+
+.step-number {
+    background-color: var(--primary);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.step-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* Form Layout Grids */
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Delivery Options Selection */
+.delivery-options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.delivery-option-card {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.delivery-option-card:hover {
+    border-color: var(--border-hover);
+}
+
+.delivery-option-card.active {
+    border-color: var(--primary);
+    background-color: var(--primary-glow);
+}
+
+.delivery-radio {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary);
+}
+
+.delivery-option-info {
+    flex-grow: 1;
+}
+
+.delivery-option-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.delivery-option-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.delivery-option-price {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   Checkout Order Summary Preview Card
+   ========================================================================== */
+.checkout-summary-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.order-items-preview {
+    margin-bottom: 24px;
+    max-height: 260px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+/* Custom Scrollbar for summary preview */
+.order-items-preview::-webkit-scrollbar {
+    width: 6px;
+}
+
+.order-items-preview::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: var(--radius-full);
+}
+
+.preview-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+}
+
+.preview-item-image {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background-color: var(--bg-tertiary);
+    flex-shrink: 0;
+}
+
+.preview-item-info {
+    flex-grow: 1;
+}
+
+.preview-item-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+}
+
+.preview-item-qty-price {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+.payment-methods-select-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.payment-method-btn {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    transition: all var(--transition-fast);
+}
+
+.payment-method-btn i {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.payment-method-btn:hover {
+    border-color: var(--border-hover);
+}
+
+.payment-method-btn.active {
+    border-color: var(--primary);
+    background-color: var(--primary-glow);
+    color: var(--primary);
+}
+
+.payment-method-btn.active i {
+    color: var(--primary);
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 992px) {
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-grid-2, .form-grid-3 {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .checkout-step-card {
+        padding: 20px 16px;
+    }
+    
+    .payment-methods-select-grid {
+        grid-template-columns: 1fr;
+    }
+}

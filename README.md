@@ -1,6 +1,6 @@
-# Lumina Co. - Premium E-Commerce Website
+# EliteStore - Premium Online Marketplace UI Clone
 
-> A premium, visually-rich e-commerce experience for high-end audio and smart lifestyle gadgets featuring dynamic animations and responsive controls.
+> A fully responsive premium e-commerce marketplace frontend clone showcasing dynamic authentication, product listings, interactive cart drawers, search systems, and order dashboards.
 
 ## 🌐 Live Demo
 **GitHub Pages:** https://KalaiarasanE.github.io/E-commerce-website/
@@ -20,10 +20,10 @@
 ## ✨ Features
 
 - Responsive UI
-- Interactive slide-out Cart Drawer with dynamic quantity adjustments and persistent localStorage state
-- Interactive slide-out Wishlist Drawer to save and move favorite items to the cart
-- Dynamic search bar and category pill-filters with instant list updates and sorting options
-- Elegant product Quick-View modal with rating systems, descriptions, and technical specifications
+- Interactive Shopping Cart & Payment Gateway simulation, including visual credit card updates and checkout fields verification
+- Client-side user dashboards featuring order tracking/history logs, address management, and mock profile updates saved in LocalStorage
+- Interactive Customer Support center with an expandible FAQ accordion, tickets creation forms, and a floating Live Chat chatbot widget
+- Advanced product catalogues equipped with list/grid view togglers, search autocomplete popups, and multiple category/brand/price/rating filters
 - Cross-browser compatibility
 - Clean and modern design
 
@@ -63,9 +63,9 @@ This project was developed with AI assistance for:
 
 ## 📚 What I Learned
 
-- Designing responsive layouts with complex CSS Grid/Flexbox and implementing dark modes with custom CSS variables
-- Managing application state in vanilla JavaScript, including localStorage syncing for persistence and event delegation for dynamic grids
-- Structuring smooth slide-out drawers, animated notifications (toast items), and visual success cues using CSS transitions and keyframes
+- Implementing fully client-side state management (including cart, wishlist, and user session profiles) purely using browser LocalStorage
+- Designing a modular stylesheet structure (style.css, components.css, responsive.css, animations.css) for ease of maintenance in vanilla CSS
+- Constructing dynamic DOM update mechanisms to handle filtering, live search auto-suggestions, and cart checkout calculation updates
 
 ---
 

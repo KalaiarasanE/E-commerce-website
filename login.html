@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteStore | Secure Login</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/dark-theme.css">
+    <style>
+        .auth-container-layout {
+            max-width: 480px;
+            margin: 80px auto;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+        }
+        .auth-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Logo Home Link -->
+    <header style="padding: 24px 0; text-align: center; border-bottom:1px solid var(--border-color); background-color: var(--bg-secondary);">
+        <a href="index.html" class="logo" style="display:inline-flex; font-size:1.8rem;"><i class="fas fa-shopping-bag"></i> EliteStore</a>
+    </header>
+
+    <!-- Main Auth Card -->
+    <main class="container">
+        <div class="auth-container-layout animate-fade-in-up">
+            <div class="auth-header">
+                <h2 style="font-weight: 800; font-size: 1.8rem;">Welcome Back</h2>
+                <p style="color:var(--text-secondary); font-size:0.9rem; margin-top:4px;">Sign in to access your premium shopping profile</p>
+            </div>
+
+            <form id="loginForm" autocomplete="off">
+                <div class="form-group">
+                    <label class="form-label" for="loginEmail">Email Address</label>
+                    <input type="email" class="form-input" id="loginEmail" placeholder="name@domain.com" required>
+                </div>
+                <div class="form-group" style="margin-bottom:14px;">
+                    <label class="form-label" for="loginPassword">Password</label>
+                    <input type="password" class="form-input" id="loginPassword" placeholder="••••••••" required>
+                </div>
+
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; font-size:0.85rem;">
+                    <label class="form-checkbox">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember Me</span>
+                    </label>
+                    <a href="forgot-password.html" style="color:var(--primary); font-weight:600;">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding:14px; margin-bottom:20px;">Sign In to Profile</button>
+            </form>
+
+            <!-- Quick login helper (Admin user seed) -->
+            <div style="background-color: var(--bg-tertiary); border:1px solid var(--border-color); border-radius: var(--radius-sm); padding:16px; font-size:0.85rem; text-align:center; margin-bottom:20px;">
+                <p style="color:var(--text-secondary); font-weight:600;">Quick Testing Account Creds:</p>
+                <code style="color:var(--primary); display:block; font-weight:700; margin-top:4px;">Email: kalai@example.com | Pass: password</code>
+                <button class="btn btn-outline btn-sm" style="margin-top:10px; width:100%; padding:6px;" onclick="document.getElementById('loginEmail').value='kalai@example.com'; document.getElementById('loginPassword').value='password';">Fill Credentials</button>
+            </div>
+
+            <div class="text-center" style="font-size:0.9rem; color:var(--text-secondary);">
+                Don't have an account yet? <a href="register.html" style="color:var(--primary); font-weight:700;">Sign Up</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/notifications.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

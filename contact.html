@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteStore | Help Center & Contact</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/dark-theme.css">
+    <style>
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+        }
+        /* FAQ details tags styling */
+        .faq-item {
+            margin-bottom: 16px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            background-color: var(--bg-secondary);
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 18px 24px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-primary);
+        }
+        .faq-answer {
+            padding: 0 24px 20px 24px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            display: none;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        .faq-question i {
+            transition: transform 0.2s ease;
+        }
+        /* Live Chat Widget Box */
+        .chat-widget-bubble {
+            position: fixed;
+            bottom: 30px;
+            left: 30px; /* Placing it on left since back to top is on right */
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+            cursor: pointer;
+            z-index: 999;
+            transition: all var(--transition-fast);
+        }
+        .chat-widget-bubble:hover {
+            transform: scale(1.08) translateY(-2px);
+        }
+        .chat-widget-box {
+            position: fixed;
+            bottom: 100px;
+            left: 30px;
+            width: 350px;
+            height: 450px;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--glass-shadow);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all var(--transition-normal);
+        }
+        .chat-widget-box.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .chat-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-messages {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .chat-msg {
+            max-width: 75%;
+            padding: 10px 14px;
+            border-radius: var(--radius-md);
+            font-size: 0.88rem;
+        }
+        .chat-msg.agent {
+            background-color: var(--bg-tertiary);
+            color: var(--text-primary);
+            align-self: flex-start;
+            border-bottom-left-radius: 0;
+        }
+        .chat-msg.user {
+            background-color: var(--primary);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 0;
+        }
+        .chat-input-row {
+            display: flex;
+            border-top: 1px solid var(--border-color);
+            padding: 12px;
+            background-color: var(--bg-secondary);
+        }
+        .chat-input-field {
+            flex-grow: 1;
+            padding: 10px 14px;
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+        }
+        .chat-send-btn {
+            background-color: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 8px;
+        }
+        @media (max-width: 768px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div><i class="fas fa-shipping-fast text-primary"></i> Free shipping on orders over ₹200!</div>
+            <div class="top-bar-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html" style="color:var(--primary);">Customer Support</a>
+                <a href="profile.html"><i class="far fa-user"></i> My Dashboard</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-main">
+            <div class="container">
+                <button class="hamburger-menu"><i class="fas fa-bars"></i></button>
+                <a href="index.html" class="logo"><i class="fas fa-shopping-bag"></i> EliteStore</a>
+                <form class="search-container" autocomplete="off">
+                    <input type="text" placeholder="Search premium products..." class="search-bar">
+                    <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+                </form>
+                <div class="header-actions">
+                    <button class="action-btn theme-toggle-btn"><i class="fas fa-moon"></i></button>
+                    <a href="cart.html" class="action-btn"><i class="fas fa-shopping-bag"></i></a>
+                    <a href="profile.html" class="action-btn"><i class="far fa-user"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN BODY -->
+    <main class="container section-padding">
+        <div class="section-header text-center" style="display:block; margin-bottom:50px;">
+            <span class="section-subtitle">24/7 Support</span>
+            <h1 class="section-title" style="margin-top:5px; font-size:2.5rem;">Elite Help Center</h1>
+            <p style="color:var(--text-secondary); max-width:600px; margin:10px auto 0 auto;">Need assistance with orders, returns, shipping, or products? Browse FAQs below or drop us a message.</p>
+        </div>
+
+        <div class="contact-layout">
+            <!-- Left: FAQ Accordion -->
+            <div>
+                <h3 style="font-size:1.4rem; font-weight:800; margin-bottom:24px;">Frequently Asked Questions</h3>
+                <div class="faq-accordion">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item">
+                        <div class="faq-question">What is your shipping & delivery timeline? <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer">We ship worldwide. Standard Shipping takes 3-5 business days, while Express Shipping takes 1-2 business days. Shipping is completely free on all orders valued above ₹200.</div>
+                    </div>
+                    <!-- FAQ 2 -->
+                    <div class="faq-item">
+                        <div class="faq-question">What is your product return policy? <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer">We support a 30-day hassle-free return window. If you are unsatisfied with your premium product, you can request a return directly from your Order Dashboard. We cover return shipping label costs.</div>
+                    </div>
+                    <!-- FAQ 3 -->
+                    <div class="faq-item">
+                        <div class="faq-question">How can I track my active order status? <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer">Once your payment is verified, you can track delivery in real time on the Order Tracking tab using the unique ID sent to your email or by going to My Orders inside your Profile Dashboard.</div>
+                    </div>
+                    <!-- FAQ 4 -->
+                    <div class="faq-item">
+                        <div class="faq-question">Are the electronics covered under warranty? <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer">Yes, all premium audio, laptop, smartphone, and home appliances are covered under a 1-Year Manufacturer Warranty. Warranty claims can be submitted via email to our support center.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Support Contact Form -->
+            <div style="background-color: var(--bg-secondary); border:1px solid var(--border-color); border-radius: var(--radius-lg); padding:40px;">
+                <h3 style="font-size:1.4rem; font-weight:800; margin-bottom:24px;">Submit a Help Ticket</h3>
+                <form id="contactForm" autocomplete="off">
+                    <div class="form-group">
+                        <label class="form-label" for="contactName">Your Name</label>
+                        <input type="text" class="form-input" id="contactName" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="contactEmail">Email Address</label>
+                        <input type="email" class="form-input" id="contactEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="contactSubject">Subject Topic</label>
+                        <input type="text" class="form-input" id="contactSubject" placeholder="e.g. Return request, Warranty claim" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="contactMessage">Message Details</label>
+                        <textarea class="form-input" id="contactMessage" rows="5" placeholder="Please describe your query in detail..." required style="resize:vertical;"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;">Send Help Ticket</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- FLOATING LIVE CHAT UI WIDGET -->
+    <!-- Bubble icon -->
+    <div class="chat-widget-bubble" id="chatWidgetBtn">
+        <i class="fas fa-comments"></i>
+    </div>
+    <!-- Chat window popup -->
+    <div class="chat-widget-box" id="chatWidgetBox">
+        <div class="chat-header">
+            <div style="display:flex; align-items:center; gap:10px;">
+                <i class="fas fa-headset" style="font-size:1.2rem;"></i>
+                <div>
+                    <h4 style="font-weight:700; font-size:0.95rem;">Elite Support Chat</h4>
+                    <span style="font-size:0.7rem; opacity:0.85; display:block;">Active Agents Online</span>
+                </div>
+            </div>
+            <button id="closeChatWidgetBtn" style="color:white; font-size:1.15rem;"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <!-- Messages box -->
+        <div class="chat-messages" id="chatMessagesBox">
+            <div class="chat-msg agent">
+                Hi there! Thanks for contacting EliteStore. How can I assist you with your shopping experience today?
+            </div>
+        </div>
+        
+        <!-- Text Input Row -->
+        <form class="chat-input-row" id="chatWidgetInputForm">
+            <input type="text" class="chat-input-field" placeholder="Type message..." id="chatMsgInput">
+            <button type="submit" class="chat-send-btn"><i class="fas fa-paper-plane"></i></button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container text-center" style="padding-bottom:30px;">
+            <p>&copy; 2026 EliteStore Clone. Built by **Kalaiarasan E**. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- FAQ Accordion JS -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const parent = q.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+
+    <!-- Live Chat widget JS -->
+    <script>
+        const chatBtn = document.getElementById('chatWidgetBtn');
+        const chatBox = document.getElementById('chatWidgetBox');
+        const closeChatBtn = document.getElementById('closeChatWidgetBtn');
+        const chatMessages = document.getElementById('chatMessagesBox');
+        const inputForm = document.getElementById('chatWidgetInputForm');
+        const textInput = document.getElementById('chatMsgInput');
+
+        if (chatBtn && chatBox && closeChatBtn) {
+            chatBtn.addEventListener('click', () => {
+                chatBox.classList.add('active');
+            });
+            closeChatBtn.addEventListener('click', () => {
+                chatBox.classList.remove('active');
+            });
+        }
+
+        if (inputForm) {
+            inputForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const msgText = textInput.value.trim();
+                if (!msgText) return;
+
+                // Append user message
+                const userMsg = document.createElement('div');
+                userMsg.className = 'chat-msg user';
+                userMsg.textContent = msgText;
+                chatMessages.appendChild(userMsg);
+                
+                textInput.value = '';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                // Mock agent typing and reply
+                setTimeout(() => {
+                    const typingIndicator = document.createElement('div');
+                    typingIndicator.className = 'chat-msg agent';
+                    typingIndicator.innerHTML = '<i class="fas fa-ellipsis-h animate-pulse"></i> Agent is typing...';
+                    chatMessages.appendChild(typingIndicator);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                    setTimeout(() => {
+                        typingIndicator.remove();
+                        
+                        const agentMsg = document.createElement('div');
+                        agentMsg.className = 'chat-msg agent';
+                        agentMsg.textContent = 'Thanks for your query! Our support representative is reviewing your message and will reply in shortly.';
+                        chatMessages.appendChild(agentMsg);
+                        
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    }, 1500);
+                }, 1000);
+            });
+        }
+
+        // Contact ticket submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                window.showToast('Help ticket submitted successfully! Check your email for support updates.', 'success');
+                contactForm.reset();
+            });
+        }
+    </script>
+
+    <!-- Scripts -->
+    <script src="js/notifications.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
