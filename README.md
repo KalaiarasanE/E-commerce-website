@@ -14,7 +14,7 @@
 
 ### 📱 Mobile View
 
-<img src="https://github.com/user-attachments/assets/65e36cf0-9ca4-4bbc-a1f1-64d7d06bcdd2" alt="Mobile Screenshot" width="35%">
+<img src="https://github.com/user-attachments/assets/65e36cf0-9ca4-4bbc-a1f1-64d7d06bcdd2" alt="Desktop Screenshot" width="100%">
 
 ---
 
