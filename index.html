@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Co. | Premium Audio & Smart Lifestyle Gadgets</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Glow Blobs -->
+    <div class="glow-blob blob-1"></div>
+    <div class="glow-blob blob-2"></div>
+    <div class="glow-blob blob-3"></div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-circle-nodes"></i></span>
+                Lumina
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#shop" class="nav-link">Shop</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#about-academy" class="nav-link">About Academy</a>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="search-input" placeholder="Search gadgets...">
+                </div>
+                <button class="nav-btn" id="wishlist-toggle-btn" title="Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="badge" id="wishlist-count">0</span>
+                </button>
+                <button class="nav-btn" id="cart-toggle-btn" title="Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="badge" id="cart-count">0</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobile-menu-toggle" title="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#" class="mobile-link">Home</a>
+        <a href="#shop" class="mobile-link">Shop</a>
+        <a href="#features" class="mobile-link">Features</a>
+        <a href="#about-academy" class="mobile-link">About Academy</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-tagline">✨ NEXT-GEN SOUND EXPERIENCE</span>
+                <h1 class="hero-title">Sound of the <span class="text-gradient">Future.</span></h1>
+                <p class="hero-description">Experience pure audio bliss with active noise cancellation, spatial acoustic engineering, and ultra-premium smart home integrations.</p>
+                <div class="hero-cta">
+                    <a href="#shop" class="btn btn-primary">Shop Collection <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#features" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card-glow"></div>
+                <div class="hero-image-card">
+                    <div class="hero-card-header">
+                        <span class="hero-card-badge">HOT RELEASE</span>
+                        <span class="hero-card-price">$299</span>
+                    </div>
+                    <img src="assets/headphones.jpg" alt="Lumina Soundscape ANC" class="hero-img">
+                    <div class="hero-card-details">
+                        <h3>Lumina Soundscape ANC</h3>
+                        <p>Studio-quality active noise-cancelling headphones</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop / Product Section -->
+    <section class="shop-section" id="shop">
+        <div class="section-container">
+            <div class="section-header">
+                <div>
+                    <span class="section-subtitle">OUR COLLECTION</span>
+                    <h2 class="section-title">Featured Innovations</h2>
+                </div>
+                <!-- Catalog Controls -->
+                <div class="catalog-controls">
+                    <!-- Category Filters -->
+                    <div class="category-filters">
+                        <button class="filter-btn active" data-category="all">All</button>
+                        <button class="filter-btn" data-category="headphones">Headphones</button>
+                        <button class="filter-btn" data-category="earbuds">Earbuds</button>
+                        <button class="filter-btn" data-category="speakers">Speakers</button>
+                        <button class="filter-btn" data-category="accessories">Accessories</button>
+                    </div>
+                    <!-- Sort Dropdown -->
+                    <div class="sort-wrapper">
+                        <select id="sort-select" class="sort-select">
+                            <option value="default">Sort by: Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Rating</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be generated dynamically via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="section-container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">THE LUMINA STANDARD</span>
+                <h2 class="section-title">Engineered for Excellence</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+                    <h3>Spatial Acoustics</h3>
+                    <p>3D audio environment simulation that tracks head movement for unparalleled immersion.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-battery-three-quarters"></i></div>
+                    <h3>Extended Battery</h3>
+                    <p>Smart energy management guarantees up to 48 hours of continuous wireless playback.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Ultra-Low Latency</h3>
+                    <p>Built with Bluetooth 5.3 technology ensuring sub-30ms audio lag for gaming and videos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h3>AI Sound Optimization</h3>
+                    <p>Real-time environment scanning automatically adjusts EQ and active noise reduction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAP Academy Section -->
+    <section class="academy-section" id="about-academy">
+        <div class="section-container">
+            <div class="academy-box">
+                <div class="academy-content">
+                    <span class="academy-tag">EDUCATION PARTNER</span>
+                    <h2>Proudly Built Under TAP Academy</h2>
+                    <p>This project was crafted as part of the Full Stack Development program at TAP Academy. Through hands-on training, industry workflows, and git-based development practices, TAP Academy equips students to become job-ready software engineers.</p>
+                    <ul class="academy-bullets">
+                        <li><i class="fa-solid fa-check"></i> Hands-on project development</li>
+                        <li><i class="fa-solid fa-check"></i> Git & GitHub production workflow</li>
+                        <li><i class="fa-solid fa-check"></i> Industry-aligned mentoring & placement assistance</li>
+                    </ul>
+                    <a href="https://thetapacademy.com/" target="_blank" class="btn btn-primary">Visit TAP Academy <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <div class="academy-visual">
+                    <div class="academy-card">
+                        <div class="academy-card-header">
+                            <span class="academy-badge">PLACEMENT ASSURED</span>
+                            <h3>TAP ACADEMY</h3>
+                        </div>
+                        <div class="academy-card-body">
+                            <div class="stats-row">
+                                <div class="stat-item">
+                                    <span class="stat-num">100%</span>
+                                    <span class="stat-lbl">Coding Practice</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-num">500+</span>
+                                    <span class="stat-lbl">Hiring Partners</span>
+                                </div>
+                            </div>
+                            <div class="academy-features">
+                                <span><i class="fa-solid fa-graduation-cap"></i> Mock Interviews</span>
+                                <span><i class="fa-solid fa-code"></i> Real Projects</span>
+                                <span><i class="fa-solid fa-laptop-code"></i> AR Classrooms</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <span class="logo-icon"><i class="fa-solid fa-circle-nodes"></i></span>
+                    Lumina
+                </a>
+                <p class="footer-desc">Premium audio, smart desktop accessories, and spatial acoustic devices for the modern digital workspace.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="social-link" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="social-link" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links-group">
+                <h3>Shop</h3>
+                <a href="#shop" class="footer-link">Headphones</a>
+                <a href="#shop" class="footer-link">Earbuds</a>
+                <a href="#shop" class="footer-link">Speakers</a>
+                <a href="#shop" class="footer-link">Accessories</a>
+            </div>
+
+            <div class="footer-links-group">
+                <h3>Company</h3>
+                <a href="#" class="footer-link">About Us</a>
+                <a href="#" class="footer-link">Careers</a>
+                <a href="#" class="footer-link">Blog</a>
+                <a href="#" class="footer-link">Contact</a>
+            </div>
+
+            <div class="footer-newsletter">
+                <h3>Subscribe</h3>
+                <p>Join the newsletter and receive updates on special product drops.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary" title="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lumina Co. Developed under TAP Academy curriculum. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div class="drawer-overlay" id="cart-drawer-overlay"></div>
+    <div class="drawer" id="cart-drawer">
+        <div class="drawer-header">
+            <h3>Your Cart (<span id="cart-total-qty">0</span>)</h3>
+            <button class="close-btn" id="cart-close-btn" title="Close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-body" id="cart-items-container">
+            <!-- Empty Cart State -->
+            <div class="empty-state" id="cart-empty-state">
+                <i class="fa-solid fa-bag-shopping empty-icon"></i>
+                <p>Your shopping bag is empty.</p>
+                <a href="#shop" class="btn btn-primary close-drawers-btn">Browse Shop</a>
+            </div>
+            <!-- Cart Items list -->
+            <div class="cart-items" id="cart-items-list"></div>
+        </div>
+        <div class="drawer-footer" id="cart-footer">
+            <div class="price-row">
+                <span>Subtotal:</span>
+                <span class="subtotal-amount" id="cart-subtotal">$0.00</span>
+            </div>
+            <div class="price-row text-sm">
+                <span>Shipping:</span>
+                <span class="text-success">Free</span>
+            </div>
+            <hr class="drawer-divider">
+            <div class="price-row total-row">
+                <span>Total:</span>
+                <span class="total-amount" id="cart-total">$0.00</span>
+            </div>
+            <button class="btn btn-primary btn-block" id="checkout-btn">Proceed to Checkout <i class="fa-solid fa-credit-card"></i></button>
+        </div>
+    </div>
+
+    <!-- Wishlist Drawer -->
+    <div class="drawer-overlay" id="wishlist-drawer-overlay"></div>
+    <div class="drawer" id="wishlist-drawer">
+        <div class="drawer-header">
+            <h3>Your Wishlist</h3>
+            <button class="close-btn" id="wishlist-close-btn" title="Close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="drawer-body" id="wishlist-items-container">
+            <!-- Empty Wishlist State -->
+            <div class="empty-state" id="wishlist-empty-state">
+                <i class="fa-regular fa-heart empty-icon"></i>
+                <p>Your wishlist is empty.</p>
+                <a href="#shop" class="btn btn-primary close-drawers-btn">Browse Shop</a>
+            </div>
+            <!-- Wishlist Items list -->
+            <div class="wishlist-items" id="wishlist-items-list"></div>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="modal-overlay" id="quickview-modal-overlay"></div>
+    <div class="modal" id="quickview-modal">
+        <button class="modal-close-btn" id="modal-close-btn" title="Close"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-grid" id="modal-content">
+            <!-- Filled dynamically by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkout-modal-overlay"></div>
+    <div class="modal checkout-modal" id="checkout-modal">
+        <div class="checkout-success-body">
+            <div class="success-icon-wrapper">
+                <i class="fa-solid fa-check success-check-icon"></i>
+            </div>
+            <h2>Order Placed Successfully!</h2>
+            <p>Thank you for shopping with Lumina. Your order has been placed and is currently being processed. A receipt has been sent to your email.</p>
+            <div class="checkout-summary">
+                <div class="summary-row">
+                    <span>Order Reference:</span>
+                    <strong id="order-ref">#LUM-83921</strong>
+                </div>
+                <div class="summary-row">
+                    <span>Amount Paid:</span>
+                    <strong id="order-amount">$0.00</strong>
+                </div>
+            </div>
+            <button class="btn btn-primary" id="checkout-success-close">Continue Shopping</button>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- App Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
