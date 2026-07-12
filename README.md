@@ -6,16 +6,15 @@
 **GitHub Pages:**[ https://KalaiarasanE.github.io/E-commerce-website/](https://ecommerceprof.netlify.app/)
 
 ---
-
 ## 📸 Screenshots
 
-### Desktop
-![Desktop Screenshot](<img width="1902" height="1097" alt="Screenshot 2026-07-12 103101" src="https://github.com/user-attachments/assets/bab2a87b-641b-43e7-91e0-30624ec55154" />
-)
+### 🖥️ Desktop View
 
-### Mobile
-![Mobile Screenshot](<img width="1887" height="1095" alt="Screenshot 2026-07-12 103127" src="https://github.com/user-attachments/assets/65e36cf0-9ca4-4bbc-a1f1-64d7d06bcdd2" />
-)
+<img src="https://github.com/user-attachments/assets/bab2a87b-641b-43e7-91e0-30624ec55154" alt="Desktop Screenshot" width="100%">
+
+### 📱 Mobile View
+
+<img src="https://github.com/user-attachments/assets/65e36cf0-9ca4-4bbc-a1f1-64d7d06bcdd2" alt="Mobile Screenshot" width="35%">
 
 ---
 
