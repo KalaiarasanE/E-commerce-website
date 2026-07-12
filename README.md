@@ -14,7 +14,7 @@
 )
 
 ### Mobile
-![Mobile Screenshot](<img width="1887" height="1095" alt="Screenshot 2026-07-12 103127" src="https://github.com/user-attachments/assets/0e8e1940-9ef1-4350-99af-9077e74488a0" />
+![Mobile Screenshot](<img width="1887" height="1095" alt="Screenshot 2026-07-12 103127" src="https://github.com/user-attachments/assets/65e36cf0-9ca4-4bbc-a1f1-64d7d06bcdd2" />
 )
 
 ---
