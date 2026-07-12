@@ -1,4 +1,4 @@
-<img width="1902" height="1097" alt="Screenshot 2026-07-12 103101" src="https://github.com/user-attachments/assets/72107f34-283a-473e-93dd-2ddb725a2246" /># EliteStore - Premium Online Marketplace UI Clone
+# EliteStore - Premium Online Marketplace UI Clone
 
 > A fully responsive premium e-commerce marketplace frontend clone showcasing dynamic authentication, product listings, interactive cart drawers, search systems, and order dashboards.
 
@@ -8,13 +8,27 @@
 ---
 ## 📸 Screenshots
 
-### 🖥️ Desktop View
+## 🖥️ Desktop View
 
-<img src="https://github.com/user-attachments/assets/bab2a87b-641b-43e7-91e0-30624ec55154" alt="Desktop Screenshot" width="100%">
+<p align="center">
+  <img
+    src="https://github.com/user-attachments/assets/bab2a87b-641b-43e7-91e0-30624ec55154"
+    alt="Desktop Screenshot"
+    width="100%"
+  />
+</p>
 
-### 📱 Mobile View
+---
 
-<img src="https://github.com/user-attachments/assets/dd74d86a-2346-4515-b2a3-f7f9bd086e57" alt="Mobile Screenshot" width="35%">
+## 📱 Mobile View
+
+<p align="center">
+  <img
+    src="https://github.com/user-attachments/assets/dd74d86a-2346-4515-b2a3-f7f9bd086e57"
+    alt="Mobile Screenshot"
+    width="35%"
+  />
+</p>
 
 ---
 
