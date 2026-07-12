@@ -14,7 +14,7 @@
 
 ### 📱 Mobile View
 
-<img src="https://github.com/user-attachments/assets/65e36cf0-9ca4-4bbc-a1f1-64d7d06bcdd2" alt="Desktop Screenshot" width="100%">
+<img src="C:\Users\km451\Downloads\Image Jul 12, 2026, 10_47_07 AM.png" alt="Mobile Screenshot" width="35%">
 
 ---
 
